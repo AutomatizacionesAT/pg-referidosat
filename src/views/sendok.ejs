@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head.ejs') %> 
+    <title><%= title%></title>
+</head>
+<body>
+    <%- include('partials/navBar.ejs') %>
+    <main class="main">
+        <form class="form-refer" action="/crud_crear" method="post">
+
+            <section class="form-refer__section form-refer__section--left">
+                <h1>Datos de quien refiere</h1>
+                <div class="form__group field">
+                    <input placeholder="Name" class="form__field" type="input" id="name_e" name="name_e" required>
+                    <label class="form__label" for="name">Nombre completo</label>
+                </div>
+                <div class="form__group field">
+                    <input placeholder="Name" class="form__field" type="input" id="documento_e" name="documento_e" required>
+                    <label class="form__label" for="name">Número de documento</label>
+                </div>
+                <div class="form__group field">
+                    <input placeholder="Name" class="form__field" type="input" id="telefono_e" name="telefono_e" required>
+                    <label class="form__label" for="name">Número de teléfono</label>
+                </div>                
+                <select class="form__select" id="antiguedad_e" name="antiguedad_e" required>
+                    <option value="">Seleccionar Antiguedad</option>
+                    <option value="Nuevo - En formación inicial">Nuevo - En formación inicial</option>
+                    <option value="Antiguo - En operación">Antiguo - En operación</option>
+                </select>
+                <select class="form__select" id="campana_e" name="campana_e" required>
+                    <option value="">Campaña a la que perteneces</option>
+                    <option value="Claro Colombia">Claro Colombia</option>
+                    <option value="Telefonica Colombia">Telefonica Colombia</option>
+                    <option value="Telefónica Ventas">Telefónica Ventas</option>
+                    <option value="Telefónica Chile">Telefónica Chile</option>
+                    <option value="Ventas Multisector">Ventas Multisector</option>
+                    <option value="Servicio Multisector">Servicio Multisector</option>
+                </select>
+                <select class="form__select" id="sede_e" name="sede_e" required>
+                    <option value="">Sede Actual</option>
+                    <option value="Bogotá Sede Royal">Bogotá Sede Royal</option>
+                    <option value="Bogotá Sede Dorado">Bogotá Sede Dorado</option>
+                    <option value="Bogotá Sede Telares">Bogotá Sede Telares</option>
+                    <option value="Bogotá Sede Floresta">Bogotá Sede Floresta</option>
+                    <option value="Bogotá Sede Elemento">Bogotá Sede Elemento</option>
+                    <option value="Pereira Tres nevados">Pereira Tres nevados</option>
+                    <option value="Pereira Olaya">Pereira Olaya</option>
+                    <option value="Medellín Guayabal">Medellín Guayabal</option>
+                </select>                                
+            </section>
+
+            <section class="form-refer__section">
+                <h1>Datos del referido</h1>
+                <div class="form__group field">
+                    <input placeholder="Name" class="form__field" type="text" id="name_r" name="name_r" required>
+                    <label class="form__label" for="name">Nombre completo</label>
+                </div>
+                <div class="form__group field">
+                    <input placeholder="Name" class="form__field" type="text" id="telefono_r" name="telefono_r" required>
+                    <label class="form__label" for="name">Número de teléfono 1</label>
+                </div>
+                <div class="form__group field">
+                    <input placeholder="Name" class="form__field" type="text" id="telefono_rii" name="telefono_rii">
+                    <label class="form__label" for="name">Número de teléfono 2</label>
+                </div>
+                <div class="field form-refer__checkboxs">
+                    <span>Tipos de ofertas / Campañas de interes</span>
+                    <label for="campana_r_1">
+                        Campañas Comerciales - Ventas
+                        <input type="checkbox" name="campana_r_1" id="campana_r_1" value="Campañas Comerciales - Ventas ">
+                    </label>
+                    <label for="campana_r_2">
+                        Campañas Servicio al cliente
+                        <input type="checkbox" name="campana_r_2" id="campana_r_2" value="Campañas Servicio al cliente ">
+                    </label>
+                    <label for="campana_r_3">
+                        Campañas Soporte técnico
+                        <input type="checkbox" name="campana_r_3" id="campana_r_3" value="Campañas Soporte técnico ">
+                    </label>
+                    <label for="campana_r_4">
+                        Campañas Chat
+                        <input type="checkbox" name="campana_r_4" id="campana_r_4" value="Campañas Chat ">
+                    </label>
+                    <label for="campana_r_5">
+                        Campañas Backoffice
+                        <input type="checkbox" name="campana_r_5" id="campana_r_5" value="Campañas Backoffice ">
+                    </label>
+                </div>
+                <div class="field form-refer__checkboxs">
+                    <span>Sedes que se le facilitaria trasladarse</span>
+                    <label for="sede_r_1">
+                        Bogotá Sede Royal - Calle 67 #12-35
+                        <input type="checkbox" name="sede_r_1" id="sede_r_1" value="Bogotá Sede Royal - Calle 67 #12-35 ">
+                    </label>
+                    <label for="sede_r_2">
+                        Bogotá Sede Telares - Carrera 54 # 5C-66
+                        <input type="checkbox" name="sede_r_2" id="sede_r_2" value="Bogotá Sede Telares - Carrera 54 # 5C-66 ">
+                    </label>
+                    <label for="sede_r_3">
+                        Bogotá Sede Dorado - Av. Dorado # 85D-55 - Local 150C
+                        <input type="checkbox" name="sede_r_3" id="sede_r_3" value="Bogotá Sede Dorado - Av. Dorado # 85D-55 - Local 150C ">
+                    </label>
+                    <label for="sede_r_4">
+                        Bogotá Sede Floresta - Carrera 69 # 98A-11- CC Floresta Outlets
+                        <input type="checkbox" name="sede_r_4" id="sede_r_4" value="Bogotá Sede Floresta - Carrera 69 # 98A-11- CC Floresta Outlets ">
+                    </label>
+                    <label for="sede_r_5">
+                        Pereira Sede Tres Nevados - Carrera 4 # 21–66
+                        <input type="checkbox" name="sede_r_5" id="sede_r_5" value="Pereira Sede Tres Nevados - Carrera 4 # 21–66 ">
+                    </label>
+                    <label for="sede_r_5">
+                        Pereira Sede Olaya - Calle 22 #12-33
+                        <input type="checkbox" name="sede_r_6" id="sede_r_6" value="Pereira Sede Olaya - Calle 22 #12-33 ">
+                    </label>
+                    <label for="sede_r_7">
+                        Medellín Sede Guayabal - Calle 10 sur #51A-55,  Centro de Negocios del Sur
+                        <input type="checkbox" name="sede_r_7" id="sede_r_7" value="Medellín Sede Guayabal - Calle 10 sur #51A-55,  Centro de Negocios del Sur ">
+                    </label>                                        
+                </div>
+                <!-- <div class="form__group field" id="hv_r" name="hv_r">
+                    <span>Si cuentas con la HV de la persona, adjunta el documento</span>
+                    <input type="file" class="form__group--file" id="hv_r" name="hv_r">
+                </div> -->
+            </section>
+            <button type="submit" class="btn-send" id="btn_crear" name="btn_crear">Enviar</button>
+        </form>
+        <div class="alertsend">
+            <div class="alertsend__container">
+                <div class="alertsend__container-x">
+                    <a class="fa-solid fa-xmark" href="/referir"></a>
+                </div>
+                <span class="alertsend__container-tittle">
+                    Tu referido ha sido registrado exitosamente.
+                </span>
+                <div class="success-checkmark">
+                    <div class="check-icon">
+                      <span class="icon-line line-tip"></span>
+                      <span class="icon-line line-long"></span>
+                      <div class="icon-circle"></div>
+                      <div class="icon-fix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

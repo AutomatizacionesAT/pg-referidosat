@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="https://unpkg.com/gridjs/l10n/dist/l10n.umd.js"></script>
+    <script src="/js/dataTables.js" defer type="module"></script>
+    <%- include('partials/head.ejs') %> 
+    <title><%= title%></title>
+</head>
+<body>
+    <%- include('partials/navBar.ejs') %>
+    <main class="over-table">
+        <h1 class="over-table__title">Gestión de referidos</h1>
+        <div class="total">
+            Cantidad Total de Referidos: <%= resultado.length %>
+        </div>
+        <form class="box-table" action="crud_actualizar" method="post">
+            <table class="table-loggin">
+                <thead>
+                    <th>ID</th>
+                    <th>Fecha Registro</th>
+                    <th>Nombre empleado</th>
+                    <th>C.C. Empleado</th>
+                    <th>Tel. Empleado</th>
+                    <th>Antiguedad Empleado</th>
+                    <th>Campaña Empleado</th>
+                    <th>Sede Empleado</th>
+                    <th>Nombre Referido</th>
+                    <th>Telefono Referido</th>
+                    <th>Telefono Referido 2</th>
+                    <th>Camapaña Interes</th>
+                    <th>Sede Interes</th>
+                    <th id="estadoclick">Estado</th>
+                </thead>
+                <tbody>
+                    <% resultado.forEach((datos) => { %>
+                        <tr class="row">
+                            <td><input class="row__id" type="text" name="delselect_id" id="delselect_id" value="<%= datos.id %>"></td>
+                            <td><input class="row__date" type="text" value="<%= new Date(datos.fecha).toLocaleDateString('en-US') %>"></td>
+                            <td><input type="text" id="name_e" name="name_e" value="<%= datos.name_e %>"></td>
+                            <td><input class="row__int" type="text" id="documento_e" name="documento_e" value="<%= datos.documento_e %>"></td>
+                            <td><input class="row__int" type="text" id="telefono_e" name="telefono_e" value="<%= datos.telefono_e %>"></td>
+                            <td><input type="text" id="antiguedad_e" name="antiguedad_e" value="<%= datos.antiguedad_e %>"></td>
+                            <td><input type="text" id="campana_e" name="campana_e" value="<%= datos.campana_e %>"></td>
+                            <td><input type="text" id="sede_e" name="sede_e" value="<%= datos.sede_e %>"></td>
+                            <td><input type="text" id="nombre_r" name="nombre_r" value="<%= datos.nombre_r %>"></td>
+                            <td><input class="row__int" type="text" id="telefono_r" name="telefono_r" value="<%= datos.telefono_r %>"></td>
+                            <td><input class="row__int" type="text" id="telefono_rii" name="telefono_rii" value="<%= datos.telefono_rii %>"></td>
+                            <td><input type="text" id="campana_r" name="campana_r" value="<%= datos.campana_r %>"></td>
+                            <td><input type="text" id="sede_r" name="sede_r" value="<%= datos.sede_r %>"></td>
+                            <td><input class="row__state" type="text" id="estado" name="estado" value="<%= datos.estado %>"></td>
+                            <td><a href="/crud_editar/<%= datos.id %>">Editar</a></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </form>
+    </main>
+</body>
+</html>
