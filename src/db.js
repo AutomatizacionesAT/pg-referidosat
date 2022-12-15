@@ -9,16 +9,11 @@ const conn = mysql.createConnection({
     database: 'railway'
 })
 
+
+
 conn.connect(function(err){
     if (err) throw console.log('Error al cargar base de datos:' + err.stack);
 })
 console.log('conexion exitosa')
 
-// conn.query('SELECT * from users', (err, rows) => {
-//     if (err) throw console.log('Error al cargar base de datos:' + err.stack);
-//     console.log('Datos de la tabla:')
-//     console.log(rows[0])
-// })
-
 export {conn}
-// conn.end()

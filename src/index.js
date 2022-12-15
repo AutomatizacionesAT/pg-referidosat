@@ -5,7 +5,6 @@ import indexRoutes from "./routes/index.js";
 import {PORT} from "./config.js"
 import exp from "constants";
 import * as cors from 'cors';
-// import { conn } from "./db.js"
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
