@@ -804,4 +804,80 @@ svg {
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  body {
+    background-size: cover;
+  }
+  .main__title {
+    font-size: 3.5rem;
+    line-height: 35px;
+    padding: 0 20px;
+  }
+  .navbar {
+    text-align: center;
+  }
+  .navbar__ul {
+    width: 100%;
+  }
+  .navbar__box-img {
+    display: none;
+  }
+  .navbar__li {
+    display: flex;
+    align-items: center;
+  }
+  .navbar__li--a {
+    padding: 9px;
+  }
+  .navbar__li--a i {
+    display: none;
+  }
+  .mainHeader {
+    width: 100%;
+    line-height: 7rem;
+  }
+  .mainHeader strong {
+    font-size: 6rem;
+  }
+  .btn-referir {
+    width: 50%;
+    margin: 85px auto;
+  }
+  .bx-search {
+    width: 100%;
+  }
+  .bx-search__input {
+    width: 70%;
+  }
+  .form-refer {
+    width: 95%;
+  }
+  .form-refer__section {
+    width: 100%;
+  }
+  .form-refer__section h1 {
+    font-size: 2.2rem;
+  }
+  .form-refer__checkboxs {
+    text-align: left;
+  }
+  .form-refer__checkboxs label {
+    padding: 1px 0;
+  }
+  .form-login {
+    width: 90%;
+  }
+  .table-employ {
+    width: 83%;
+  }
+  .table-estado__movil {
+    display: none;
+    visibility: hidden;
+  }
+  .alertsend__container {
+    text-align: center;
+    width: 80%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
