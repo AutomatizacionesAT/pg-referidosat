@@ -3,9 +3,9 @@ import {DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT} from './config.js'
 
 const conn = mysql.createConnection({
     user: 'root',
-    password: 'rwLZhJ2eKh8ZxHCWsXqn',
-    host: 'containers-us-west-145.railway.app',
-    port: 7929,
+    password: 'gVCvSadtNxMdf51pgy59',
+    host: 'containers-us-west-45.railway.app',
+    port: 7220,
     database: 'railway'
 })
 
