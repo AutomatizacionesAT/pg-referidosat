@@ -21,6 +21,7 @@ methods_crud.crear = (req, res) => {
     const campana_e = req.body.campana_e;
     const sede_e = req.body.sede_e;
     const nombre_r = req.body.name_r;
+    const documento_r = req.body.documento_r;
     const telefono_r = req.body.telefono_r;
     const telefono_rii = req.body.telefono_rii != '' ? req.body.telefono_rii : '000';
 
@@ -40,9 +41,9 @@ methods_crud.crear = (req, res) => {
     const sede_r_8 = req.body.sede_r_8 != undefined ? req.body.sede_r_8 : '';
 
     let createSql = 
-    "INSERT INTO users (name_e, documento_e, telefono_e, antiguedad_e, campana_e, sede_e, nombre_r, telefono_r, telefono_rii, campana_r, sede_r, estado, fecha)" +
+    "INSERT INTO users (name_e, documento_e, telefono_e, antiguedad_e, campana_e, sede_e, nombre_r, telefono_r, telefono_rii, campana_r, sede_r, estado, fecha, documento_r)" +
     "VALUES" + 
-    `('${name_e}', ${documento_e}, ${telefono_e}, '${antiguedad_e}', '${campana_e}', '${sede_e}', '${nombre_r}', ${telefono_r}, ${telefono_rii}, '${campana_r_1 + campana_r_2  + campana_r_3 + campana_r_4 + campana_r_5}', '${sede_r_1 + sede_r_2 + sede_r_3 + sede_r_4 + sede_r_5 + sede_r_6 + sede_r_7 + sede_r_8}', 'Pendiente', NOW());`
+    `('${name_e}', ${documento_e}, ${telefono_e}, '${antiguedad_e}', '${campana_e}', '${sede_e}', '${nombre_r}', ${telefono_r}, ${telefono_rii}, '${campana_r_1 + campana_r_2  + campana_r_3 + campana_r_4 + campana_r_5}', '${sede_r_1 + sede_r_2 + sede_r_3 + sede_r_4 + sede_r_5 + sede_r_6 + sede_r_7 + sede_r_8}', 'Pendiente', NOW(), '${documento_r}');`
 
     let resetID = "SET @num := 0;UPDATE users SET id = @num := (@num+1);ALTER TABLE users AUTO_INCREMENT =1;"
 
