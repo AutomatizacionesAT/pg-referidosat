@@ -153,14 +153,15 @@
             }
         }
 
-        if (input_value == 'documento_e') {
+        // VALIDA LOS CAMPOS DE CEDULA PARA SABER SIN SON IGUALES (EMPLEADO/REFERIDO)
+        if (input_value == 'documento_e' && input_item.value.length > 0) {
             if (e.target.value == document.getElementById('documento_r').value) {
-                alert('No puedes ser empleado y referido al mismo tiempo')
+                alert('Las cédulas de EMPLEADO/REFERIDO deben ser distintas')
                 input_item.value = ''                
             }
-        } else if (input_value == 'documento_r') {
+        } else if (input_value == 'documento_r' && input_item.value.length > 0) {
             if (e.target.value == document.getElementById('documento_e').value) {
-                alert('No puedes ser empleado y referido al mismo tiempo')
+                alert('Las cédulas de EMPLEADO/REFERIDO deben ser distintas')
                 input_item.value = ''                
             }
         }
