@@ -146,12 +146,27 @@
         let input_value = e.target.id;
         let input_item = document.getElementById(e.target.id)
 
-        if (input_value == 'documento_e' || input_value == 'telefono_e' || input_value == 'telefono_r' || input_value == 'telefono_rii') {
+        if (input_value == 'documento_e' || input_value == 'telefono_e' || input_value == 'telefono_r' || input_value == 'telefono_rii' || input_value == 'documento_r') {
             if (input_item.value.length > 10 ) {
                 alert('Has Excedido la cantidad límite de caracteres para tu documento, vuelve a ingresarlo correctamente')
                 input_item.value = ''
             }
         }
+
+        if (input_value == 'documento_e') {
+            if (e.target.value == document.getElementById('documento_r').value) {
+                alert('No puedes ser empleado y referido al mismo tiempo')
+                input_item.value = ''                
+            }
+        }
+
+        if (input_value == 'documento_r') {
+            if (e.target.value == document.getElementById('documento_e').value) {
+                alert('No puedes ser empleado y referido al mismo tiempo')
+                input_item.value = ''                
+            }
+        }
+        
     })
 </script>
 </html>
