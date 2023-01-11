@@ -158,9 +158,7 @@
                 alert('No puedes ser empleado y referido al mismo tiempo')
                 input_item.value = ''                
             }
-        }
-
-        if (input_value == 'documento_r') {
+        } else if (input_value == 'documento_r') {
             if (e.target.value == document.getElementById('documento_e').value) {
                 alert('No puedes ser empleado y referido al mismo tiempo')
                 input_item.value = ''                
