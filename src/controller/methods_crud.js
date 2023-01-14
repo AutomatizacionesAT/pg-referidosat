@@ -50,6 +50,7 @@ methods_crud.crear = (req, res) => {
     conn.query(createSql,resetID,(err, result) => {
         if (err) {
             console.log(err)
+            // return res.status(500).json({message: err.message});
         } else {
             res.redirect('/sendok')
         }
