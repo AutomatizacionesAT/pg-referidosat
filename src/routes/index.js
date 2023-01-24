@@ -24,5 +24,6 @@ router.post("/&0@%&&", methods_crud.login);
 router.post("/crud_actualizar", methods_crud.actualizar)
 router.get("/crud_editar/:id", methods_crud.editar)
 
+router.get("/updatecsv", methods_crud.csvpage)
 
 export default router;

@@ -2,7 +2,7 @@ import express from "express";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import indexRoutes from "./routes/index.js";
-import {PORT} from "./config.js"
+import {PORT} from "./config.js";
 import exp from "constants";
 import * as cors from 'cors';
 
